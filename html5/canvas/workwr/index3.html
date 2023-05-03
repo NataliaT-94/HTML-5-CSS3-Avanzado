@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>El numero primo mas alto hasta el momento es: <output id="resultado"></output></p>
+        <script>
+            var worker = new Worker('worker.js');
+            worker.onmessage = function (event) {
+                document.getElementById('resultado').textContent = event.data;                
+            }
+        </script>
+    </body>
+</html>
