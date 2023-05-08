@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>El numero primo mas alto hasta el momento es: <output id="resultado1"></output></p>
+        <p>El numero primo mas alto hasta el momento es: <output id="resultado2"></output></p>
+        <p>El numero primo mas alto hasta el momento es: <output id="resultado3"></output></p>
+        <p>El numero primo mas alto hasta el momento es: <output id="resultado4"></output></p>
+        <script>
+            var worker1 = new Worker('worker.js');
+            worker.onmessage = function (event) {
+                document.getElementById('resultado1').textContent = event.data;                
+            }
+            var worker2 = new Worker('worker.js');
+            worker.onmessage = function (event) {
+                document.getElementById('resultado2').textContent = event.data;                
+            }
+            var worker3 = new Worker('worker.js');
+            worker.onmessage = function (event) {
+                document.getElementById('resultado3').textContent = event.data;                
+            }
+            var worker4 = new Worker('worker.js');
+            worker.onmessage = function (event) {
+                document.getElementById('resultado4').textContent = event.data;                
+            }
+        </script>
+    </body>
+</html>
